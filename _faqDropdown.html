@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <link rel="icon" type="image/x-icon" href="https://tinyurl.com/yt7f6mkc">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <main>
+        <!--  -->
+        <section id="faq-section" style="display: none;">
+            <div class="faq-section_header">
+                <h2>Frequently Asked Question</h2>
+                <p>Here are quick answers to questions shoppers ask the most.</p>
+            </div>
+
+            <div class="faq-container">
+                <!--  -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq1" checked>
+                    <label class="faq-question" for="faq1">
+                        <span> What type of electric fan should I get?</span> <span class="icon"></span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Choosing a fan depends on your space, airflow preference, and portability.</p>
+
+                        <p>Stand Fans &mdash; great for living rooms or bedrooms; adjustable height for wider airflow.
+                        </p>
+
+                        <p>Desk Fans &mdash; compact and perfect for personal cooling on tables or work desks.</p>
+
+                        <p>Ceiling Fans &mdash; ideal for larger rooms; provide steady, even air circulation.</p>
+
+                        <p>Industrial Fans &mdash; built for heavy-duty use and larger spaces like workshops or open
+                            areas.</p>
+
+                        <p>Mini Fans &mdash; ultra-portable and battery-operated; ideal for personal use at your desk,
+                            bedside, or while traveling.</p>
+
+                        <p>Portable Fans &mdash; lightweight and easy to move around for quick cooling anywhere.</p>
+
+                        <p>Air Coolers &mdash; use water or ice to deliver cooler air; a good choice for areas with hot,
+                            dry climates.</p>
+
+                        <p>Air Purifying Fans (Dyson, Crane) &mdash; combine cooling with air purification, effectively
+                            circulating clean air while removing allergens, dust, and pollutants. Ideal for improving
+                            air quality in bedrooms, offices, and living spaces.</p>
+
+                        <p>Air Circulator Fans &mdash; provides energy efficient, consistent coverage rather than the
+                            directed, forced air in order to create the wind-chill cooling effect of a smaller fan.</p>
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq2">
+                    <label class="faq-question" for="faq2">
+                        <span> What type of blade is used?</span> <span class="icon"></span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>Fan blades are usually made from ABS (Acrylonitrile Butadiene Styrene), plastic, or stainless
+                            steel, depending on the model:</p>
+
+                        <p>ABS blades &mdash; durable, lightweight, and resistant to cracking.</p>
+
+                        <p>Plastic blades &mdash; affordable, safe, and ideal for everyday home use.</p>
+
+                        <p>Stainless steel blades &mdash; sturdy, long-lasting, and great for stronger airflow.</p>
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq3">
+                    <label class="faq-question" for="faq3">
+                        <span> Is the fan height adjustable?</span> <span class="icon"></span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>
+                            Many stand fans come with adjustable height features, allowing you to customize the airflow
+                            to your preference. You can browse our stand fan collection here:
+                            <a href="/small-appliances/fans/stand-fan.html">
+                                https://www.abenson.com/small-appliances/fans/stand-fan.html
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!--  -->
+
+                <div class="faq-item">
+                    <input type="checkbox" id="faq4">
+                    <label class="faq-question" for="faq4">
+                        <span>What’s the difference between inverter fans and rechargeable fans?</span> <span
+                            class="icon"></span>
+                    </label>
+                    <div class="faq-answer">
+                        <p>
+                            Inverter fans are designed to save energy by adjusting motor speed for efficient
+                            performance, perfect for long daily use.
+                        </p>
+                        <br>
+                        <p>
+                            Rechargeable fans, on the other hand, run on built-in batteries and are ideal for use during
+                            power interruptions or when you need portability.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- JS: Move FAQ and generate JSON-LD -->
+        <script>
+            console.log("FAQ script loaded");
+
+            (function initFAQ() {
+                const faq = document.querySelector("#faq-section");
+                if (!faq) return;
+
+                function moveFAQ() {
+                    const productsContainer = document.querySelector(".category-products-UCL");
+                    if (!productsContainer) return false;
+
+                    if (faq.dataset.moved === "true") return true;
+
+                    // Move FAQ below products container
+                    productsContainer.insertAdjacentElement("afterend", faq);
+                    faq.dataset.moved = "true";
+                    faq.style.display = "block";
+
+                    console.log("FAQ section moved successfully");
+
+                    // Generate dynamic JSON-LD
+                    const faqItems = faq.querySelectorAll(".faq-item");
+                    if (faqItems.length) {
+                        const faqData = {
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": []
+                        };
+
+                        faqItems.forEach(item => {
+                            const question = item.querySelector(".faq-question span").textContent.trim();
+                            const answer = item.querySelector(".faq-answer p").textContent.trim();
+                            if (question && answer) {
+                                faqData.mainEntity.push({
+                                    "@type": "Question",
+                                    "name": question,
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": answer
+                                    }
+                                });
+                            }
+                        });
+
+                        const script = document.createElement("script");
+                        script.type = "application/ld+json";
+                        script.text = JSON.stringify(faqData);
+                        document.head.appendChild(script);
+
+                        console.log("FAQ structured data added");
+                    }
+
+                    return true;
+                }
+
+                // Try to move immediately
+                if (!moveFAQ()) {
+                    const observer = new MutationObserver(() => {
+                        if (moveFAQ()) observer.disconnect();
+                    });
+                    observer.observe(document.body, { childList: true, subtree: true });
+                }
+
+                // Re-run on Magento SPA/AJAX-like events
+                document.addEventListener("contentUpdated", moveFAQ);
+                document.addEventListener("page:loaded", moveFAQ);
+                document.addEventListener("product-list-rendered", moveFAQ);
+                window.addEventListener("popstate", moveFAQ);
+
+            })();
+        </script>
+
+        <style>
+            #faq-section {
+                align-items: center;
+                margin: 0 auto;
+                max-width: 900px;
+                padding: 10px;
+            }
+
+            #faq-section :is(h2, p, label) {
+                margin: unset;
+            }
+
+
+            .faq-section_header {
+                display: grid;
+                gap: clamp(8px, 2vw, 16px);
+                text-align: center;
+                color: var(--Paragraph-Text, #5A5A59);
+                margin-bottom: 32px;
+            }
+
+            .faq-section_header h2 {
+                color: var(--Abenson-Blue-Abenson-Blue, #1E22AA);
+                font-size: clamp(24px, 2.6vw, 28px);
+                margin: unset;
+            }
+
+            .faq-section_header p {
+                font-size: clamp(16px, 1.6vw, 18px);
+                margin: unset;
+            }
+
+            .faq-container {
+                width: 100%;
+            }
+
+            .faq-item {
+                margin-bottom: 16px;
+                border-radius: 24px;
+                border: 1px solid var(--Grey-2, #DCDCDC);
+                background: #fff;
+                overflow: hidden;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+                position: relative;
+            }
+
+            /* Hide checkbox */
+            .faq-item input {
+                display: none;
+            }
+
+            .faq-question {
+                display: flex;
+                justify-content: space-between;
+                color: var(--PrimaryTextColor-PrimaryText90, #4C525C);
+                padding: 22px 28px;
+                font-size: clamp(16px, 1.6vw, 18px) !important;
+                font-weight: 600;
+                cursor: pointer;
+                position: relative;
+                user-select: none;
+            }
+
+            .faq-question .icon {
+                position: relative;
+                width: 24px;
+                height: 24px;
+                margin-left: 16px;
+            }
+
+            .faq-question .icon:before,
+            .faq-question .icon:after {
+                content: "";
+                position: absolute;
+                width: clamp(12px, 2vw, 16px);
+                height: 2px;
+                background: var(--PrimaryColor-Blue70, #185BAA);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: transform .3s;
+            }
+
+            /* Vertical line (for "+") */
+            .faq-question .icon:after {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+
+            /* Answer content */
+            .faq-answer {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                max-height: 0;
+                overflow: hidden;
+                padding: 0 28px;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #555;
+                transition: max-height .35s ease, padding .35s ease;
+            }
+
+            .faq-answer p:last-child {
+                margin-bottom: 22px;
+                /* color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676); */
+            }
+
+            /* When OPEN */
+            .faq-item input:checked~.faq-answer {
+                max-height: fit-content;
+                padding: 0 28px 22px 28px;
+            }
+
+            /* Turn "+" into "-" */
+            .faq-item input:checked~.faq-question .icon:after {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+        </style>
+    </main>
+</body>
+
+</html>
+
+<style>
+    html {
+        scrollbar-gutter: stable;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        align-items: center;
+        font-family: "Poppins", serif;
+        color: #4c525c;
+    }
+
+    body,
+    main {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 1400px;
+
+    }
+
+    h1 {
+        color: #006de2;
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+        line-height: clamp(1.8rem, 4vw, 2.2rem);
+    }
+
+
+
+    #hero {
+        width: 100%;
+        position: relative;
+        background-color: #ecf5ff;
+        padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 5vw, 5rem);
+        max-width: 1400px;
+        border-bottom-left-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+    }
+
+
+    a {
+        text-decoration: none;
+    }
+
+
+    @media only screen and (width > 768px) {}
+
+    @media only screen and (width > 968px) {}
+
+    @media screen and (width > 1400px) {
+        body {
+            background-color: unset;
+        }
+
+        #hero {
+            margin-top: 2rem;
+            border-radius: 1.25rem;
+        }
+    }
+</style>
