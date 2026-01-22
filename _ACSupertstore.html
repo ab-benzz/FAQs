@@ -4,34 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AC FAQs</title>
+    <title>HA FAQ Superstore</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 </head>
-<style>
-    * {
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-</style>
 
 <body>
-    <!-- AC FAQs -->
     <!-- style="display: none;" -->
-
-
     <section id="faq-section">
         <div class="faq-section_header">
             <h2>Frequently Asked Questions</h2>
             <p>Here are quick answers to questions shoppers ask the most.</p>
         </div>
 
-        <div class="faq-container">
+        <!-- OPTION TOGGLES -->
+        <!-- <div class="faq-options">
+        <button class="faq-option active" data-target="ac">Laptops</button>
+    </div> -->
+
+
+        <!-- AC -->
+        <div class="faq-container" data-category="ac">
             <!--  -->
             <div class="faq-item">
                 <input type="checkbox" id="faq1">
@@ -307,14 +304,30 @@
 
             <!--  -->
         </div>
+
     </section>
 
     <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            align-items: center;
+            font-family: "Poppins", serif;
+            color: #4c525c;
+        }
+
         #faq-section {
             align-items: center;
             margin: 0 auto;
-            max-width: 900px;
+            /* max-width: 900px; */
             padding: 10px;
+            max-width: 1400px;
+
         }
 
         #faq-section :is(h2, p, label) {
@@ -333,10 +346,11 @@
             color: var(--Abenson-Blue-Abenson-Blue, #1E22AA);
             font-size: clamp(24px, 2.6vw, 28px);
             margin: unset;
+            font-weight: 600;
         }
 
         .faq-section_header p {
-            font-size: 16px;
+            font-size: clamp(16px, 1.6vw, 18px);
             margin: unset;
         }
 
@@ -400,22 +414,14 @@
         .faq-answer {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
             max-height: 0;
             overflow: hidden;
             padding: 0 28px;
-            font-size: 14px;
+            font-size: 16px;
             line-height: 1.6;
-            color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
+            color: #555;
             transition: max-height .35s ease, padding .35s ease;
-        }
-
-        .faq-answer h3 {
-            font-size: clamp(16px, 1.6vw, 18px) !important;
-            margin: unset;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            font-weight: 600;
         }
 
         .faq-answer p:last-child {
@@ -433,96 +439,73 @@
             transform: translate(-50%, -50%) rotate(0deg);
         }
 
-        .faq-answer ul {
+
+        /*  */
+        /*  */
+        /*  */
+
+
+        .faq-options {
             display: flex;
-            flex-direction: column;
-            list-style-type: disc;
-            margin: 0 0 0 28px;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
         }
 
-        .faq-answer ul li:marker {
-            font-size: 12px;
+        .faq-option {
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid #DCDCDC;
+            background: #fff;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 14px;
+            color: #4C525C;
+        }
+
+        .faq-option.active {
+            border: 1px solid var(--PrimaryColor-Blue60, #2B75CC);
+            color: var(--PrimaryColor-Blue60, #2B75CC);
+
+        }
+
+        .faq-container.hidden {
+            display: none;
+        }
+
+        @media (width > 968px) {
+            .faq-section_header {
+                text-align: start;
+            }
+
+            .faq-options {
+                justify-content: start;
+            }
         }
     </style>
-
-
-    <!-- JS: Move FAQ and generate JSON-LD -->
-    <script type="text/simi-script">
-(function initFAQ() {
-    const faq = document.querySelector("#faq-section");
-    if (!faq) return;
-
-    function moveFAQ() {
-        const productsContainer = document.querySelector(".category-products-UCL");
-        if (!productsContainer) return false;
-
-        if (faq.dataset.moved === "true") return true;
-
-        // Move FAQ below products container
-        productsContainer.insertAdjacentElement("afterend", faq);
-        faq.dataset.moved = "true";
-        faq.style.display = "block";
-
-        console.log("FAQ section moved successfully");
-
-        // Generate dynamic JSON-LD
-        const faqItems = faq.querySelectorAll(".faq-item");
-        if (faqItems.length) {
-            const faqData = {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": []
-            };
-
-            faqItems.forEach(item => {
-                const question = item.querySelector(".faq-question span").textContent.trim();
-let answerEl = item.querySelector(".faq-answer p");
-if (!answerEl) {
-// fallback: take all text in .faq-answer
-answerEl = item.querySelector(".faq-answer");
-}
-const answer = answerEl ? answerEl.textContent.trim() : "";
-                //   const answer = item.querySelector(".faq-answer p").textContent.trim();
-
-                if (question && answer) {
-                    faqData.mainEntity.push({
-                        "@type": "Question",
-                        "name": question,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": answer
-                        }
-                    });
-                }
-            });
-
-            const script = document.createElement("script");
-            script.type = "application/ld+json";
-            script.text = JSON.stringify(faqData);
-            document.head.appendChild(script);
-
-            console.log("FAQ structured data added");
-        }
-
-        return true;
-    }
-
-    // Try to move immediately
-    if (!moveFAQ()) {
-        const observer = new MutationObserver(() => {
-            if (moveFAQ()) observer.disconnect();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-    }
-
-    // Re-run on Magento SPA/AJAX-like events
-    document.addEventListener("contentUpdated", moveFAQ);
-    document.addEventListener("page:loaded", moveFAQ);
-    document.addEventListener("product-list-rendered", moveFAQ);
-    window.addEventListener("popstate", moveFAQ);
-
-})();
-</script>
 </body>
 
 </html>
+
+
+<script>
+    const options = document.querySelectorAll(".faq-option");
+    const containers = document.querySelectorAll(".faq-container");
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            const target = option.dataset.target;
+
+            options.forEach(o => o.classList.remove("active"));
+            option.classList.add("active");
+
+            containers.forEach(c => {
+                c.classList.toggle(
+                    "hidden",
+                    c.dataset.category !== target
+                );
+            });
+        });
+    });
+</script>

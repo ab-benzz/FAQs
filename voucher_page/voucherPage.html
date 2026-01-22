@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voucher Page FAQs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<body>
+    <!-- Voucher Page FAQs -->
+
+
+    <!-- style="display: none;" -->
+    <section id="faq-section">
+        <div class="faq-section_header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Here are quick answers to questions shoppers ask the most.</p>
+        </div>
+
+        <div class="faq-container">
+            <!--  -->
+            <div class="faq-item">
+                <input type="checkbox" id="faq1">
+                <label class="faq-question" for="faq1">
+                    <span>What are voucher codes?</span> <span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+                    Voucher or promo codes are applicable for online transactions, and can be used to claim a discount or a freebie. Please review coupon mechanics for eligibility and requirements. Codes need to be encoded on the check-out page for promo to be applied.
+                    </p>
+                </div>
+            </div>
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq2">
+                <label class="faq-question" for="faq2">
+                    <span>How do I apply the voucher code?</span> <span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+ Add participating products on your cart, and click the Checkout button
+                    </p>
+                   <ul>
+<li>On check-out page, complete required fills and select eligible Payment Option. </li>
+<li>Enter voucher code on click Apply. </li>
+<li>Check order summary if promo has reflected before selecting Place Order button. </li>
+</ul>
+                </div>
+            </div>
+
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq3">
+                <label class="faq-question" for="faq3">
+                    <span>How many codes can I use in a single checkout?</span> <span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+                       Customers can apply 1 voucher code per transaction.
+                    </p>
+                </div>
+            </div>
+
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq4">
+                <label class="faq-question" for="faq4">
+                    <span>How come the code isn't working?</span><span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+Voucher code mechanics and promo duration may vary per code. Some are applicable for selected products, payment methods, or exclusive to Abenson Rewards members only. Please review coupon mechanics for eligibility and requirements. If you're unable to use the code after fulfilling all terms and conditions, contact Abenson sales team at 
+                    </p>
+                </div>
+            </div>
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq5">
+                <label class="faq-question" for="faq5">
+                    <span>Terms</span><span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+                        Abenson reserves the right to cancel any orders if fraud activity is suspected.
+                    </p>
+                </div>
+            </div>
+
+            <!--  -->
+        </div>
+    </section>
+
+    <style>
+        #faq-section {
+            align-items: center;
+            margin: 0 auto;
+            max-width: 900px;
+            padding: 10px;
+        }
+
+        #faq-section :is(h2, p, label) {
+            margin: unset;
+        }
+
+        .faq-section_header {
+            display: grid;
+            gap: clamp(8px, 2vw, 16px);
+            text-align: center;
+            color: var(--Paragraph-Text, #5A5A59);
+            margin-bottom: 32px;
+        }
+
+        .faq-section_header h2 {
+            color: var(--Abenson-Blue-Abenson-Blue, #1E22AA);
+            font-size: clamp(24px, 2.6vw, 28px);
+            margin: unset;
+        }
+
+        .faq-section_header p {
+            font-size: 16px;
+            margin: unset;
+        }
+
+        .faq-container {
+            width: 100%;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border-radius: 24px;
+            border: 1px solid var(--Grey-2, #DCDCDC);
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+            position: relative;
+        }
+
+        /* Hide checkbox */
+        .faq-item input {
+            display: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            color: var(--PrimaryTextColor-PrimaryText90, #4C525C);
+            padding: 22px 28px;
+            font-size: clamp(16px, 1.6vw, 18px) !important;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            user-select: none;
+        }
+
+        .faq-question .icon {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            margin-left: 16px;
+        }
+
+        .faq-question .icon:before,
+        .faq-question .icon:after {
+            content: "";
+            position: absolute;
+            width: clamp(12px, 2vw, 16px);
+            height: 2px;
+            background: var(--PrimaryColor-Blue70, #185BAA);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform .3s;
+        }
+
+        /* Vertical line (for "+") */
+        .faq-question .icon:after {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        /* Answer content */
+        .faq-answer {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 28px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
+            transition: max-height .35s ease, padding .35s ease;
+        }
+
+        .faq-answer h3 {
+            font-size: clamp(16px, 1.6vw, 18px) !important;
+            margin: unset;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 600;
+        }
+
+        .faq-answer p:last-child {
+            margin-bottom: 22px;
+        }
+
+        /* When OPEN */
+        .faq-item input:checked~.faq-answer {
+            max-height: fit-content;
+            padding: 0 28px 22px 28px;
+        }
+
+        /* Turn "+" into "-" */
+        .faq-item input:checked~.faq-question .icon:after {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        .faq-answer ul {
+            display: flex;
+            flex-direction: column;
+            list-style-type: disc;
+            margin: 0 0 0 28px;
+        }
+
+        .faq-answer ul li:marker {
+            font-size: 12px;
+        }
+    </style>
+
+
+    <!-- JS: Move FAQ and generate JSON-LD -->
+    <script type="text/simi-script">
+(function initFAQ() {
+    const faq = document.querySelector("#faq-section");
+    if (!faq) return;
+
+    function moveFAQ() {
+        const productsContainer = document.querySelector(".category-products-UCL");
+        if (!productsContainer) return false;
+
+        if (faq.dataset.moved === "true") return true;
+
+        // Move FAQ below products container
+        productsContainer.insertAdjacentElement("afterend", faq);
+        faq.dataset.moved = "true";
+        faq.style.display = "block";
+
+        console.log("FAQ section moved successfully");
+
+        // Generate dynamic JSON-LD
+        const faqItems = faq.querySelectorAll(".faq-item");
+        if (faqItems.length) {
+            const faqData = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": []
+            };
+
+            faqItems.forEach(item => {
+                const question = item.querySelector(".faq-question span").textContent.trim();
+let answerEl = item.querySelector(".faq-answer p");
+if (!answerEl) {
+// fallback: take all text in .faq-answer
+answerEl = item.querySelector(".faq-answer");
+}
+const answer = answerEl ? answerEl.textContent.trim() : "";
+                //   const answer = item.querySelector(".faq-answer p").textContent.trim();
+
+                if (question && answer) {
+                    faqData.mainEntity.push({
+                        "@type": "Question",
+                        "name": question,
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": answer
+                        }
+                    });
+                }
+            });
+
+            const script = document.createElement("script");
+            script.type = "application/ld+json";
+            script.text = JSON.stringify(faqData);
+            document.head.appendChild(script);
+
+            console.log("FAQ structured data added");
+        }
+
+        return true;
+    }
+
+    // Try to move immediately
+    if (!moveFAQ()) {
+        const observer = new MutationObserver(() => {
+            if (moveFAQ()) observer.disconnect();
+        });
+        observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    // Re-run on Magento SPA/AJAX-like events
+    document.addEventListener("contentUpdated", moveFAQ);
+    document.addEventListener("page:loaded", moveFAQ);
+    document.addEventListener("product-list-rendered", moveFAQ);
+    window.addEventListener("popstate", moveFAQ);
+
+})();
+</script>
+</body>
+
+</html>

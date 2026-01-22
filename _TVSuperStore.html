@@ -4,32 +4,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beds FAQs</title>
+    <title>HA FAQ Superstore</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            align-items: center;
+            font-family: "Poppins", serif;
+            color: #4c525c;
+        }
+    </style>
 </head>
-<style>
-    * {
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-</style>
 
 <body>
-    <!-- Beds/Mattress FAQs -->
     <!-- style="display: none;" -->
     <section id="faq-section">
         <div class="faq-section_header">
-            <h2>Frequently Asked Question</h2>
+            <h2>Frequently Asked Questions</h2>
             <p>Here are quick answers to questions shoppers ask the most.</p>
         </div>
 
-        <div class="faq-container">
+        <!-- OPTION TOGGLES -->
+        <div class="faq-options">
+            <button class="faq-option active" data-target="sofa">Sofa</button>
+            <button class="faq-option" data-target="mattress">Mattress</button>
+        </div>
+
+
+        <!-- Sofa -->
+        <div class="faq-container" data-category="sofa">
+            <!--  -->
+            <div class="faq-item">
+                <input type="checkbox" id="sofa-faq1">
+                <label class="faq-question" for="sofa-faq1">
+                    <span>How do I choose the right sofa size?</span> <span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+                        Measure your space before buying a sofa to make sure it fits well in your living area. Also,
+                        check the size of your doors, hallways, stairs, or elevator, especially if you live in a condo
+                        or apartment. Check out our <a href="https://home.abenson.com/buyers-guide/sofa">Sofa
+                            Buyer’s</a> Guide to learn more.
+                    </p>
+                </div>
+            </div>
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="sofa-faq2">
+                <label class="faq-question" for="sofa-faq2">
+                    <span>What are the different types of sofas, and which ones are best for small spaces?</span> <span
+                        class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>Sofas come in different types to match your comfort needs and room size:</p>
+                    <ul>
+                        <li><strong>Sofa:</strong> A standard three-seater ideal for families or shared living areas.
+                        </li>
+                        <li><strong>Loveseat:</strong> A cozy two-seater that fits perfectly in apartments or condos
+                            without taking up too much space.</li>
+                        <li><strong>Sectional:</strong> A modular sofa that can form L- or U-shapes, offering flexible
+                            seating for larger rooms.</li>
+                        <li><strong>Recliner:</strong> Designed for ultimate relaxation, recliners feature adjustable
+                            backrests and footrests—perfect for lounging, reading, or watching TV.</li>
+                        <li><strong>Sofa Bed:</strong> A multifunctional choice that easily converts into a bed, great
+                            for small homes or hosting overnight guests.</li>
+                        <li><strong>Armless Sofa:</strong> With its open and streamlined design, it helps make compact
+                            spaces look more spacious and modern.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="sofa-faq3">
+                <label class="faq-question" for="sofa-faq3">
+                    <span>Which material is best for my lifestyle?</span> <span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Leather: A classic choice known for its durability and timeless appeal. It’s easy to clean
+                            and becomes softer and more beautiful over time—ideal for busy homes or those with pets.
+                        </li>
+                        <li>Fabric: Offers a wide range of colors, textures, and patterns. It’s soft, cozy, and some
+                            types are treated to be stain-resistant—great for families or casual spaces.</li>
+                        <li>Velvet: Luxurious and elegant, with a rich texture that adds depth to any room. Best for
+                            low-traffic areas or households without pets to maintain its plush look.</li>
+                        <li>Synthetic Leather/Leatherette: Delivers the sleek look of real leather at a lower cost. It’s
+                            easy to wipe clean and resists spills, making it ideal for families or pet owners.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="sofa-faq4">
+                <label class="faq-question" for="sofa-faq4">
+                    <span>Which material is easy to clean?</span><span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>If you want a low-maintenance sofa, go for materials that resist stains and are easy to wipe
+                        down:</p>
+                    <ul>
+                        <li>Leather: One of the easiest to clean—just wipe with a damp cloth to remove dust or spills.
+                        </li>
+                        <li>Synthetic Leather/Leatherette: Similar to real leather but more affordable; it’s
+                            water-resistant and simple to maintain with mild soap and water. Synthetic leather is also a
+                            popular choice for pet owners due to how easy it is to clean up, as the leather will not
+                            absorb any liquids or leave stains when in contact with dirt.</li>
+                        <li>Fabric with Stain-Resistant Treatment: Some fabric sofas are treated with special coatings
+                            that make cleaning up spills quick and easy.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="sofa-faq5">
+                <label class="faq-question" for="sofa-faq5">
+                    <span>What type of sofa frame should I choose for durability?</span><span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+                        Look for a sturdy frame made of kiln-dried hardwood for long-lasting durability. Common durable
+                        options include:
+                    </p>
+
+                    <ul>
+                        <li>Solid Wood – Strong and reliable for everyday use.</li>
+                        <li>Pinewood – Lightweight yet sturdy, ideal for various designs.</li>
+                        <li>Beech – Dense and durable, perfect for high-quality sofas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="sofa-faq6">
+                <label class="faq-question" for="sofa-faq6">
+                    <span>How do I maintain my sofa?</span><span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <ul>
+                        <li>Vacuum regularly to prevent dust buildup and clean hard-to-reach spaces.</li>
+                        <li>Rotate and fluff cushions to keep them even and prevent them from sagging.</li>
+                        <li>Address spills and stains immediately, as untreated spills can soak deeper and cause
+                            discoloration.</li>
+                        <li>Consider slipcovers to protect your sofa from accidental spills or pet damage.</li>
+                        <li>Protect your sofa from direct sunlight to keep its synthetic leather or leatherette soft,
+                            vibrant, and long-lasting.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--  -->
+
+            <div class="faq-item">
+                <input type="checkbox" id="sofa-faq7">
+                <label class="faq-question" for="sofa-faq7">
+                    <span>Does my sofa come assembled?</span>
+                    <span class="icon"></span>
+                </label>
+                <div class="faq-answer">
+                    <p>
+                        Many sofas come pre-assembled, but some may require minimal setup (like attaching legs or
+                        sectional connectors). Check out our
+                        <a href="https://www.abenson.com/abenson-home/sofas/assembly-type/delivered-assembled.html">sofas
+                            here.</a>
+                    </p>
+                </div>
+            </div>
+
+            <!--  -->
+        </div>
+
+        <!--  Mattress -->
+        <div class="faq-container hidden" data-category="mattress">
             <!--  -->
             <div class="faq-item">
                 <input type="checkbox" id="faq1">
@@ -163,10 +332,10 @@
                 </label>
                 <div class="faq-answer">
                     <ul>
-                        <li><strong>Mattresses:</strong> Typically 7–10 years (depending on quality and use). <a
-                                href="#">Check them out here.</a></li>
-                        <li><strong>Bed frames:</strong> Can last much longer if sturdy and well-maintained. <a
-                                href="#">Check them out here.</a></li>
+                        <li><strong>Mattresses:</strong> Typically 7–10 years (depending on quality and use). Check them
+                            out <a href="https://home.abenson.com/abenson-home/mattress.html">here.</a></li>
+                        <li><strong>Bed frames:</strong> Can last much longer if sturdy and well-maintained. Check them
+                            out <a href="https://home.abenson.com/abenson-home/bedroom/beds.html">here.</a></li>
                     </ul>
                 </div>
             </div>
@@ -280,12 +449,15 @@
         </div>
     </section>
 
+
     <style>
         #faq-section {
             align-items: center;
             margin: 0 auto;
-            max-width: 900px;
+            /* max-width: 900px; */
             padding: 10px;
+            max-width: 1400px;
+
         }
 
         #faq-section :is(h2, p, label) {
@@ -294,21 +466,23 @@
 
         .faq-section_header {
             display: grid;
-            gap: clamp(8px, 2vw, 16px);
+            gap: 8px;
             text-align: center;
             color: var(--Paragraph-Text, #5A5A59);
             margin-bottom: 32px;
         }
 
         .faq-section_header h2 {
-            color: var(--Abenson-Blue-Abenson-Blue, #1E22AA);
+            color: var(--Abenson-Blue-Brighter-Blue, #006DE2);
             font-size: clamp(24px, 2.6vw, 28px);
             margin: unset;
+            font-weight: 600;
         }
 
         .faq-section_header p {
-            font-size: 16px;
+            font-size: clamp(16px, 1.6vw, 18px);
             margin: unset;
+            font-weight: 500;
         }
 
         .faq-container {
@@ -334,7 +508,7 @@
             display: flex;
             justify-content: space-between;
             color: var(--PrimaryTextColor-PrimaryText90, #4C525C);
-            padding: 22px 28px;
+            padding: 20px 28px 16px;
             font-size: clamp(16px, 1.6vw, 18px) !important;
             font-weight: 600;
             cursor: pointer;
@@ -371,7 +545,7 @@
         .faq-answer {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
             max-height: 0;
             overflow: hidden;
             padding: 0 28px;
@@ -381,22 +555,24 @@
             transition: max-height .35s ease, padding .35s ease;
         }
 
-        .faq-answer h3 {
-            font-size: clamp(16px, 1.6vw, 18px) !important;
-            margin: unset;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-            font-weight: 600;
-        }
-
         .faq-answer p:last-child {
             margin-bottom: 22px;
+        }
+
+        /* .faq-answer>ul>li:first-of-type {
+            margin-top: -10px;
+        } */
+
+        #faq-section .faq-answer a {
+            font-size: 14px !important;
+            text-decoration: underline !important;
+            color: var(--SecondaryGray-SecondaryText-SecondaryGray80, #767676);
         }
 
         /* When OPEN */
         .faq-item input:checked~.faq-answer {
             max-height: fit-content;
-            padding: 0 28px 22px 28px;
+            padding: 0 28px 20px 28px;
         }
 
         /* Turn "+" into "-" */
@@ -404,96 +580,73 @@
             transform: translate(-50%, -50%) rotate(0deg);
         }
 
-        .faq-answer ul {
+
+        /*  */
+        /*  */
+        /*  */
+
+
+        .faq-options {
             display: flex;
-            flex-direction: column;
-            list-style-type: disc;
-            margin: 0 0 0 28px;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
         }
 
-        .faq-answer ul li:marker {
-            font-size: 12px;
+        .faq-option {
+            padding: 7px 14px;
+            border-radius: 999px;
+            border: 1px solid #DCDCDC;
+            background: #fff;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 14px;
+            color: #4C525C;
+        }
+
+        .faq-option.active {
+            border: 1px solid var(--PrimaryColor-Blue60, #2B75CC);
+            color: var(--PrimaryColor-Blue60, #2B75CC);
+
+        }
+
+        .faq-container.hidden {
+            display: none;
+        }
+
+        @media (width > 968px) {
+            .faq-section_header {
+                text-align: start;
+            }
+
+            .faq-options {
+                justify-content: start;
+            }
         }
     </style>
-
-
-    <!-- JS: Move FAQ and generate JSON-LD -->
-    <script type="text/simi-script">
-(function initFAQ() {
-    const faq = document.querySelector("#faq-section");
-    if (!faq) return;
-
-    function moveFAQ() {
-        const productsContainer = document.querySelector(".category-products-UCL");
-        if (!productsContainer) return false;
-
-        if (faq.dataset.moved === "true") return true;
-
-        // Move FAQ below products container
-        productsContainer.insertAdjacentElement("afterend", faq);
-        faq.dataset.moved = "true";
-        faq.style.display = "block";
-
-        console.log("FAQ section moved successfully");
-
-        // Generate dynamic JSON-LD
-        const faqItems = faq.querySelectorAll(".faq-item");
-        if (faqItems.length) {
-            const faqData = {
-                "@context": "https://schema.org",
-                "@type": "FAQPage",
-                "mainEntity": []
-            };
-
-            faqItems.forEach(item => {
-                const question = item.querySelector(".faq-question span").textContent.trim();
-let answerEl = item.querySelector(".faq-answer p");
-if (!answerEl) {
-// fallback: take all text in .faq-answer
-answerEl = item.querySelector(".faq-answer");
-}
-const answer = answerEl ? answerEl.textContent.trim() : "";
-                //   const answer = item.querySelector(".faq-answer p").textContent.trim();
-
-                if (question && answer) {
-                    faqData.mainEntity.push({
-                        "@type": "Question",
-                        "name": question,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": answer
-                        }
-                    });
-                }
-            });
-
-            const script = document.createElement("script");
-            script.type = "application/ld+json";
-            script.text = JSON.stringify(faqData);
-            document.head.appendChild(script);
-
-            console.log("FAQ structured data added");
-        }
-
-        return true;
-    }
-
-    // Try to move immediately
-    if (!moveFAQ()) {
-        const observer = new MutationObserver(() => {
-            if (moveFAQ()) observer.disconnect();
-        });
-        observer.observe(document.body, { childList: true, subtree: true });
-    }
-
-    // Re-run on Magento SPA/AJAX-like events
-    document.addEventListener("contentUpdated", moveFAQ);
-    document.addEventListener("page:loaded", moveFAQ);
-    document.addEventListener("product-list-rendered", moveFAQ);
-    window.addEventListener("popstate", moveFAQ);
-
-})();
-</script>
 </body>
 
 </html>
+
+
+<script>
+    const options = document.querySelectorAll(".faq-option");
+    const containers = document.querySelectorAll(".faq-container");
+
+    options.forEach(option => {
+        option.addEventListener("click", () => {
+            const target = option.dataset.target;
+
+            options.forEach(o => o.classList.remove("active"));
+            option.classList.add("active");
+
+            containers.forEach(c => {
+                c.classList.toggle(
+                    "hidden",
+                    c.dataset.category !== target
+                );
+            });
+        });
+    });
+</script>
