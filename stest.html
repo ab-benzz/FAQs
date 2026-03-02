@@ -1,0 +1,118 @@
+<style>
+    /* ICON WRAPPER */
+    .custom-icons .col-sm-7 {
+        display: flex;
+        justify-content: center;
+        /* center horizontally */
+        align-items: center;
+        flex-wrap: nowrap;
+        /* force 1 row */
+        gap: 20px;
+        /* spacing between icons */
+    }
+
+    /* REMOVE bootstrap float behavior */
+    .custom-8-icons {
+        float: none !important;
+        width: auto !important;
+        text-align: center;
+    }
+
+    /* ICON IMAGE SIZE */
+    .custom-icon-image {
+        display: block;
+        margin: 0 auto 8px;
+        max-width: 120px;
+        /* adjust if needed */
+    }
+
+    /* MOBILE VERSION */
+    @media only screen and (max-width: 767px) {
+        .custom-icons .col-sm-7 {
+            flex-wrap: wrap;
+            /* allow wrap on mobile */
+            gap: 15px;
+        }
+
+        .custom-icon-image {
+            max-width: 90px;
+        }
+    }
+</style>
+<!--- TOP BANNER --->
+<div class="stacking-banner">
+    <div class="col-sm-6 stack-banner"><img style="width: 100%;"
+            src="/media/wysiwyg/Brands/Samsung/EW-Galaxy_S26_PO-Feb2026-600x400-Main-1.jpg" alt=""></div>
+    <div class="col-sm-6 stack-banner"><img style="width: 100%;"
+            src="/media/wysiwyg/Brands/Samsung/EW-Galaxy_S26_PO-Feb2026-600x400-Freebie-2.jpg" alt=""></div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="{{media url=" wysiwyg/"}}" alt=""></p>
+<!----------8-ICONS---------->
+<div class="custom-icons bottom-space col-sm-14 no-gutters">
+    <div class="col-sm-7 no-gutters">
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/samsung-official-store/samsung-galaxy-s-series/samsung-galaxy-s26-series.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/Brands/Samsung/408Icons.jpg"}}" alt="">Samsung
+                Galaxy S26</a></div>
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/samsung-official-store/samsung-galaxy-a-series/samsung-galaxy-a07.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/pages/GALAXY_A07.png"}}" alt="">Samsung Galaxy
+                A07</a></div>
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/samsung-official-store/samsung-galaxy-a-5g-series/samsung-galaxy-a36.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/pages/GALAXY_A36.png"}}" alt="">Samsung Galaxy
+                A36</a></div>
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/samsung-official-store/samsung-galaxy-a-5g-series/samsung-galaxy-a56.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/pages/GALAXY_A56.png"}}" alt="">Samsung Galaxy
+                A56</a></div>
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/samsung-official-store/samsung-galaxy-s-series.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/pages/S-SERIES.png"}}" alt="">Samsung
+                S-Series</a></div>
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/samsung-official-store/samsung-foldable-phones.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/pages/FOLDABLES.png"}}" alt="">Samsung
+                Foldables</a></div>
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/tablet/product-brand/samsung.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/pages/TABLETS.png"}}" alt="">Samsung
+                Tablets</a></div>
+        <div class="col-xs-3 custom-8-icons"><a class="custom-icon-title"
+                href="https://electroworld.abenson.com/mobile/samsung-official-store/samsung-wearables.html"><img
+                    class="custom-icon-image" src="{{media url=" wysiwyg/pages/WEARABLES.png"}}" alt="">Samsung
+                Wearables</a></div>
+    </div>
+    <!----------SAMSUNG  PRE ORDER ---------->
+    <p>{{widget type="Abenson\Widget\Block\Category\ProductHighlight" category="category/134" sku="O_201425, O_201426,
+        O_201427, O_201428, O_201421, O_201422, O_201423, O_201424"
+        banner_image="wysiwyg/Brands/Samsung/EW-Galaxy_S26_PO-Feb2026-400x400.jpg"
+        banner_url="https://electroworld.abenson.com/promos/samsung-galaxy-unpacked" hide_oos="yes" limit="4"}}</p>
+    <!----------SAMSUNG  PRODUCTS---------->
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="B_SAMSGLX11, 198990, 198914, 200487, 200489,
+        196535, 194758, 194759, 197236, 199192, 189067, 197834, 196503" header="Best Deals" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="200487, 199194, 199192, 198993, 198990, 198929,
+        198917, 198916, 198914, 197829, 197827, 197826, 197236" header="New Arrivals" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="197833, 197832, 197830, 197829, 197827, 197826,
+        197834" header="Samsung Galaxy Z Flip and Fold7 Series" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="198993, 198992, 198990, 195589, 195573, 195572,
+        195571" header="Samsung Galaxy S25 Series" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="B_SAMSGLX11, 196505, 196503" header="Samsung
+        Galaxy A56 &amp; A36" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="198919, 198918, 198917, 198916, 194758, 194759"
+        header="Samsung Galaxy A17 &amp; A16" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="196535, 198914, 198913, 198912" header="Samsung
+        Galaxy A07 &amp; A06" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="193134, 193133, 193132, 189042, 189041, 184344,
+        184343" header="Samsung Galaxy Flip &amp; Fold" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="200489, 200488, 200487, 199194, 199192, 197236,
+        190315, 189067, 189060, 189059, 181641, 181638" header="Samsung Tablet" hide_oos="yes"}}</p>
+    <p>{{widget type="Abenson\Widget\Block\Product\FeaturedProduct" sku="198929, 198928, 198076, 198075, 198062, 193165,
+        193164, 193161, 193155, 191497, 190167, 189132, 189131, 189130, 189129, 184363, 184350, 184347" header="Samsung
+        Wearables" hide_oos="yes"}}</p>
+    <div>{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+        block_id="148"}}{{widget type="Magento\Cms\Block\Widget\Block" template="widget/static_block/default.phtml"
+        block_id="154"}}</div>
+</div>
